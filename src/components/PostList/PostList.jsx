@@ -1,5 +1,5 @@
-// eslint-disable-next-line import/no-unresolved, import/extensions
-import { PostInfo } from './PostInfo';
+// eslint-disable-next-line import/extensions
+import { PostInfo } from '../PostInfo/PostInfo';
 
 export const PostList = ({ posts }) => (
   <div className="PostList">

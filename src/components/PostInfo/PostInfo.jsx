@@ -5,7 +5,6 @@ import { UserInfo } from './UserInfo';
 import { CommentList } from './CommentList';
 import './PostInfo.scss';
 
-
 export const PostInfo = ({ post }) => (
   <div className="PostInfo">
     <div className="PostInfo__header">
