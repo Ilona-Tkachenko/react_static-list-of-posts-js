@@ -1,8 +1,5 @@
-/* eslint-disable import/no-unresolved */
-// eslint-disable-next-line import/extensions
-import { UserInfo } from './UserInfo';
-// eslint-disable-next-line import/no-unresolved, import/extensions
-import { CommentList } from './CommentList';
+import { CommentList } from '../CommentList/CommentList';
+import { UserInfo } from '../UserInfo/UserInfo';
 import './PostInfo.scss';
 
 export const PostInfo = ({ post }) => (
