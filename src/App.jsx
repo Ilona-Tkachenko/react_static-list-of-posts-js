@@ -5,33 +5,24 @@ import commentsFromServer from './api/comments.json';
 import usersFromServer from './api/users.json';
 import { PostList } from './components/PostList/PostList';
 
-function getUserById(userId) {
-  return usersFromServer.find(user => user.id === userId) || null;
-}
+const preparedPosts = postsFromServer.map(post => {
+  // eslint-disable-next-line no-shadow
+  const user = usersFromServer.find(user => user.id === post.userId);
+  const comments = commentsFromServer.filter(
+    comment => comment.postId === post.id,
+  );
 
-export const posts = postsFromServer.map(post => ({
-  ...post,
-  user: getUserById(post.userId),
-}));
-
-function getPostById(postId) {
-  return posts.find(post => post.id === postId) || null;
-}
-
-export const comments = commentsFromServer.map(comment => ({
-  ...comment,
-  post: getPostById(comment.postId),
-}));
-
-posts.forEach(post => {
-  // eslint-disable-next-line no-param-reassign
-  post.comments = comments.filter(comment => comment.postId === post.id);
+  return {
+    ...post,
+    user,
+    comments,
+  };
 });
 
 export const App = () => (
   <section className="App">
     <h1 className="App__title">Static list of posts</h1>
 
-    <PostList posts={posts} />
+    <PostList posts={preparedPosts} />
   </section>
 );
