@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/extensions
 import { PostInfo } from '../PostInfo/PostInfo';
 
 export const PostList = ({ posts }) => (

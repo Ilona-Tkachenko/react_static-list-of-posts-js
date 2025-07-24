@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-unresolved, import/extensions
-import { CommentInfo } from './CommentInfo';
+import { CommentInfo } from '../CommentInfo/CommentInfo';
 import './CommentList.scss';
 
 export const CommentList = ({ comments }) => (
